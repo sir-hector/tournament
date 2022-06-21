@@ -1,0 +1,40 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+form > label {
+    display: flex;
+    flex-direction: row;
+    width: 40vw;
+    justify-content: space-between;
+    padding: 10px;
+    font-family: RobotoBold;
+    font-size: 1rem;
+}
+
+input{
+    border-width: 0px 0px 1px 0px ;
+}
+
+input[type=submit] {
+    background-color: white;
+    font-family: RobotoBold;
+    border-width: 2px 2px 2px 2px ;
+}
+
+input[type=submit]:hover {
+    background-color: black;
+    color: white;
+}
+
+form > label > select {
+    width: 30%;
+    border-width: 0px 0px 1px 0px ;
+}
+
+p {
+    font-size: 1.5rem;
+}
