@@ -1,6 +1,7 @@
 import Match from "./Match"
 
-const Bracket = ({ tournament }) => {
+const Bracket = ({ tournament, updateMatch }) => {
+
     return (
         <div>
             {tournament.map((round, id) => (
@@ -8,7 +9,7 @@ const Bracket = ({ tournament }) => {
                     <h2>Round: {id+1}</h2>
                     {round.matches.map((match, index) => (
                         <div key = {index}>
-                            <Match match={match} />
+                            <Match match={match} updateMatch={updateMatch}/>
                         </div>
                     ))}
                 </div>

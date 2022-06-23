@@ -12,11 +12,15 @@ function App() {
   const [teams, setTeams] = useState({})
   const [tournament, setTournament] = useState({})
 
+  const updateMatch = (value) => {
+    console.log(value)
+  }
+
   return (
     <div className="App">
       <Header/>
       <NewTournament updateState ={(value) => setSettings(value)} updateTeams = {(value => setTeams(value))} updateTournament ={(value => setTournament(value))}/>
-      {setting.type && <Bracket tournament={tournament}/>}
+      {setting.type && <Bracket tournament={tournament} updateMatch = {(value => updateMatch(value))} />}
       <Footer/>
     </div>
   );
