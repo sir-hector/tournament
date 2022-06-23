@@ -3,6 +3,7 @@ import Header from './components/common/Header'
 import Footer from './components/common/Footer'
 import NewTournament from './components/form/NewTournament';
 import { useState } from 'react';
+import Bracket from './components/match/Bracket';
 
 
 
@@ -11,12 +12,11 @@ function App() {
   const [teams, setTeams] = useState({})
   const [tournament, setTournament] = useState({})
 
-
   return (
     <div className="App">
       <Header/>
       <NewTournament updateState ={(value) => setSettings(value)} updateTeams = {(value => setTeams(value))} updateTournament ={(value => setTournament(value))}/>
-      {setting.type && <div>Wygenerowano</div>}
+      {setting.type && <Bracket tournament={tournament}/>}
       <Footer/>
     </div>
   );

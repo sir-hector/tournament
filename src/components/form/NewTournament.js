@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import './css/newTournament.css'
@@ -10,7 +10,7 @@ import Match from '../../models/Match';
 
 
 const NewTournament = ({ updateState, updateTeams, updateTournament }) => {
-    const { handleSubmit, register, errors } = useForm();
+    const { handleSubmit, register, errors, unregister } = useForm();
 
     const initialTeam = {
         "name": "name",
@@ -86,7 +86,7 @@ const NewTournament = ({ updateState, updateTeams, updateTournament }) => {
             <p> TEAMS: </p>
             {teams.map((team, q) =>
                 <label> Name:
-                    <input key={q}  {...register(`team${q}`)}></input>
+                    <input key={q}  {...register(`team${q}`, {shouldUnregister: true})}></input>
                 </label>
             )}
             <input type="submit" value="generate" />
