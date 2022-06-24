@@ -7,7 +7,6 @@ const Match = ({match, updateMatch}) => {
         updateMatch(e);
     }
 
-    console.log(match)
     return(
         <div>
             {match.team1.name}
@@ -15,7 +14,9 @@ const Match = ({match, updateMatch}) => {
             {match.team2.name}
             {match.result2}
             <form onSubmit={handleSubmit(onSubmit)} className="tournament-form">
-                <input  {...register(`match`, {shouldUnregister: true})}></input>
+                <input  {...register(`id`, {shouldUnregister: true})} value={match.id} hidden="true"></input>
+                <input  {...register(`result1`, {shouldUnregister: true})}></input>
+                <input  {...register(`result2`, {shouldUnregister: true})}></input>
                 <input type='submit'></input>
             </form>
         </div>

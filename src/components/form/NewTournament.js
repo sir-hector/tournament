@@ -55,10 +55,11 @@ const NewTournament = ({ updateState, updateTeams, updateTournament }) => {
 
     function generateMatchesInRounds(teams, roundsArray) {
         let array = robin(teams.length, teams)
+        console.log(array)
         roundsArray.forEach((round, id) => {
             round.matches = []
-            array[id].forEach(game => {
-                round.matches.push(new Match(0, game[0], game[1]))
+            array[id].forEach((game,id2) => {
+                round.matches.push(new Match(`${id}${id2}`, game[0], game[1]))
             })
         })
         updateTournament(roundsArray)
