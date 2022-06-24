@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import './css/match.css'
 
 const Match = ({match, updateMatch}) => {
     const { handleSubmit, register, errors, unregister } = useForm();
@@ -9,15 +10,16 @@ const Match = ({match, updateMatch}) => {
 
     return(
         <div>
-            {match.team1.name}
-            {match.result1}
-            {match.team2.name}
-            {match.result2}
-            <form onSubmit={handleSubmit(onSubmit)} className="tournament-form">
-                <input  {...register(`id`, {shouldUnregister: true})} value={match.id} hidden="true"></input>
-                <input  {...register(`result1`, {shouldUnregister: true})}></input>
-                <input  {...register(`result2`, {shouldUnregister: true})}></input>
-                <input type='submit'></input>
+            <form onSubmit={handleSubmit(onSubmit)} className="match-form">
+                <input  {...register(`id`, {shouldUnregister: true})} value={match.id} hidden={true}></input>
+                <div className='match-form_result'>
+                {match.team1.name} {match.result1} - {match.result2} {match.team2.name} 
+                </div>
+                <div className='inputs'>
+                <input  {...register(`result1`, {shouldUnregister: true})} className="score_input" ></input>
+                <input  {...register(`result2`, {shouldUnregister: true})} className="score_input"></input>
+                </div>
+                <input type='submit' value="set score"></input>
             </form>
         </div>
     )

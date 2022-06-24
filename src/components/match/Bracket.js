@@ -1,13 +1,15 @@
 import Match from "./Match"
+import './css/bracket.css'
 
 const Bracket = ({ tournament, updateMatch }) => {
     return (
+        <div className="tournament">
         <div className="tournament-bracket">
             {tournament.map((round, id) => (
                 <div key={id}  className="tournament-round">
                     <h2 className="tournament-round_header">Round: {id+1}</h2>
                     {round.matches.map((match, index) => (
-                        <div key = {index}>
+                        <div key = {index} className="tournament-round_match">
                             <Match match={match} updateMatch={updateMatch}/>
                         </div>
                     ))}
@@ -15,6 +17,7 @@ const Bracket = ({ tournament, updateMatch }) => {
             )
 
             )}
+        </div>
         </div>
     )
 }

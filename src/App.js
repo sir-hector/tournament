@@ -4,6 +4,7 @@ import Footer from './components/common/Footer'
 import NewTournament from './components/form/NewTournament';
 import { useState } from 'react';
 import Bracket from './components/match/Bracket';
+import './App.css'
 
 
 
