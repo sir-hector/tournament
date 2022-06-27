@@ -14,7 +14,7 @@ const Table = () => {
             "goals_against": 3,
         },
         {
-            "id": 1,
+            "id": 2,
             "name": "Karol",
             "points": 3,
             "goals_scored": 3,
@@ -30,7 +30,7 @@ const Table = () => {
         data: data
     })
 
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance
+    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, footerGroups } = tableInstance
     console.log(data)
     return (
         <table {...getTableProps()}>
@@ -65,6 +65,22 @@ const Table = () => {
                     })
                 }
             </tbody>
+            <tfoot>
+            {
+                footerGroups.map(footerGroup => (
+                    <tr {...footerGroup.getFooterGroupProps()}>
+                    {
+                        footerGroup.headers.map(column => (
+                            <td {...column.getFooterProps}>
+                            {column.render('Footer')}
+                            </td>
+
+                        ))
+                    }
+                    </tr>
+                ))
+            }
+            </tfoot>
         </table>
     )
 
