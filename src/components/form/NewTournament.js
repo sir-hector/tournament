@@ -42,6 +42,7 @@ const NewTournament = ({ updateState, updateTeams, updateTournament }) => {
             }
         }
         generateRounds(teamsArray);
+        return teamsArray
     }
 
     function generateRounds(teams) {
@@ -55,7 +56,6 @@ const NewTournament = ({ updateState, updateTeams, updateTournament }) => {
 
     function generateMatchesInRounds(teams, roundsArray) {
         let array = robin(teams.length, teams)
-        console.log(array)
         roundsArray.forEach((round, id) => {
             round.matches = []
             array[id].forEach((game,id2) => {

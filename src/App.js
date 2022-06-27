@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/common/Header'
 import Footer from './components/common/Footer'
+import Table from './components/table/Table'
 import NewTournament from './components/form/NewTournament';
 import { useState } from 'react';
 import Bracket from './components/match/Bracket';
@@ -14,8 +15,6 @@ function App() {
   const [tournament, setTournament] = useState({})
 
   const updateMatch = (value) => {
-    console.log(value.id)
-    console.log(value)
     setTournament(prevTournament => {
       const newState = prevTournament.map(obj => {
         obj.matches.forEach(match => {
@@ -31,14 +30,14 @@ function App() {
       return newState
     })
   }
-
-  console.log(tournament)
+  console.log(teams)
 
   return (
     <div className="App">
       <Header/>
       <NewTournament updateState ={(value) => setSettings(value)} updateTeams = {(value => setTeams(value))} updateTournament ={(value => setTournament(value))}/>
       {setting.type && <Bracket tournament={tournament} updateMatch = {(value => updateMatch(value))} />}
+      {setting.type && <Table />}
       <Footer/>
     </div>
   );
