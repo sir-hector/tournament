@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { useTable } from 'react-table'
-import { COLUMNS } from './columns'
+import { COLUMNS, GROUP_COLUMNS } from './columns'
 import './css/table.css'
 
 const Table = () => {
@@ -22,7 +22,7 @@ const Table = () => {
         },
     ]
     
-    const columns = useMemo(() => COLUMNS, [])
+    const columns = useMemo(() => GROUP_COLUMNS, [])
     const data = useMemo(() => example, [])
 
     const tableInstance = useTable({
