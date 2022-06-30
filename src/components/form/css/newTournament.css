@@ -38,3 +38,13 @@ form > label > select {
 p {
     font-size: 1.5rem;
 }
+.team-error-input{
+    font-size: 0.9rem;
+    position: absolute;
+    top: 15px;
+    right: 6px;
+    color: red;
+}
+.team-label {
+    position: relative;
+}

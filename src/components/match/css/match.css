@@ -1,5 +1,5 @@
 .inputs {
-    margin-bottom: 20px;;
+    margin-bottom: 0px;
 }
 
 .score_input{
@@ -7,4 +7,9 @@
     margin: 10px;
     text-align: center;
     
+}
+
+.error-input {
+    margin-bottom: 20px;
+    font-size: 1rem;
 }

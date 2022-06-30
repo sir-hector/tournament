@@ -10,7 +10,7 @@ import Match from '../../models/Match';
 
 
 const NewTournament = ({ updateState, updateTeams, updateTournament }) => {
-    const { handleSubmit, register, errors, unregister } = useForm();
+    const { handleSubmit, register, formState: {errors}, unregister } = useForm();
 
     const initialTeam = {
         "name": "name",
@@ -65,7 +65,7 @@ const NewTournament = ({ updateState, updateTeams, updateTournament }) => {
         updateTournament(roundsArray)
     }
 
-
+    console.log(errors[`team1`])
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="tournament-form">
@@ -86,8 +86,9 @@ const NewTournament = ({ updateState, updateTeams, updateTournament }) => {
             </label>
             <p> TEAMS: </p>
             {teams.map((team, q) =>
-                <label> Name:
-                    <input key={q}  {...register(`team${q}`, {shouldUnregister: true})}></input>
+                <label className='team-label'> Name:
+                    <input key={q}  {...register(`team${q}`, {shouldUnregister: true, required:true})}></input>
+                    {errors[`team${q}`] && <p className='team-error-input'>Please provide team name</p>}
                 </label>
             )}
             <input type="submit" value="generate" />

@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import './css/match.css'
 
 const Match = ({match, updateMatch}) => {
-    const { handleSubmit, register, errors, unregister } = useForm();
+    const { handleSubmit, register, formState: {errors}, unregister } = useForm();
 
     const onSubmit = (e) => {
         updateMatch(e);
@@ -18,9 +18,11 @@ const Match = ({match, updateMatch}) => {
                 {match.team1.name} {match.result1} - {match.result2} {match.team2.name} 
                 </div>
                 <div className='inputs'>
-                <input  {...register(`result1`, {shouldUnregister: true})} className="score_input" ></input>
-                <input  {...register(`result2`, {shouldUnregister: true})} className="score_input"></input>
+                <input  {...register(`result1`, {shouldUnregister: true, pattern: /^[0-9]/i, required: true})} className="score_input" ></input>
+                <input  {...register(`result2`, {shouldUnregister: true, pattern: /^[0-9]/i, required: true})} className="score_input"></input>
                 </div>
+                {errors.result1 && <p className='error-input'>Please provide score for first team</p>}
+                {errors.result2 && <p className='error-input'>Please provide score for second team</p>}
                 {match.winner && <div>FINISHED</div>}
                 <input type='submit' value="set score" disabled={match.winner}></input>
             </form>
