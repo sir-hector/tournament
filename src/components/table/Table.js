@@ -3,27 +3,12 @@ import { useTable, useSortBy } from 'react-table'
 import { COLUMNS, GROUP_COLUMNS } from './columns'
 import './css/table.css'
 
-const Table = () => {
+const Table = ({teams}) => {
 
-    const example = [
-        {
-            "id": 1,
-            "name": "Karol",
-            "points": 3,
-            "goals_scored": 3,
-            "goals_against": 3,
-        },
-        {
-            "id": 2,
-            "name": "Karol",
-            "points": 1,
-            "goals_scored": 1,
-            "goals_against": 2 ,
-        },
-    ]
-    
+    console.log(teams)
     const columns = useMemo(() => GROUP_COLUMNS, [])
-    const data = useMemo(() => example, [])
+    const data = useMemo(() => teams, [teams])
+    
 
     const tableInstance = useTable({
         columns: columns,
@@ -31,7 +16,6 @@ const Table = () => {
     }, useSortBy)
 
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, footerGroups } = tableInstance
-    
     return (
         <table {...getTableProps()}>
             <thead>
