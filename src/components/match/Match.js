@@ -21,6 +21,7 @@ const Match = ({match, updateMatch}) => {
                 <input  {...register(`result1`, {shouldUnregister: true})} className="score_input" ></input>
                 <input  {...register(`result2`, {shouldUnregister: true})} className="score_input"></input>
                 </div>
+                {match.winner && <div>FINISHED</div>}
                 <input type='submit' value="set score" disabled={match.winner}></input>
             </form>
         </div>
