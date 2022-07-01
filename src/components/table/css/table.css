@@ -23,6 +23,16 @@ table th, tfoot td {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #04AA6D;
+    background-color: black;
     color: white;
+}
+
+tbody tr:first-child{
+    background-color:#C9B037;
+}
+tbody tr:nth-child(2){
+    background-color:#D7D7D7;
+}
+tbody tr:nth-child(3){
+    background-color:#AD8A56;
 }

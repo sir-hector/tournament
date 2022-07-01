@@ -21,8 +21,8 @@ const Match = ({match, updateMatch}) => {
                 <input  {...register(`result1`, {shouldUnregister: true, pattern: /^[0-9]/i, required: true})} className="score_input" ></input>
                 <input  {...register(`result2`, {shouldUnregister: true, pattern: /^[0-9]/i, required: true})} className="score_input"></input>
                 </div>
-                {errors.result1 && <p className='error-input'>Please provide score for first team</p>}
-                {errors.result2 && <p className='error-input'>Please provide score for second team</p>}
+                {errors.result1 && <p className='match-error-input'>Please provide score for first team</p>}
+                {errors.result2 && <p className='match-error-input'>Please provide score for second team</p>}
                 {match.winner && <div>FINISHED</div>}
                 <input type='submit' value="set score" disabled={match.winner}></input>
             </form>
