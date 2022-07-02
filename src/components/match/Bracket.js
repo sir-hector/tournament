@@ -1,5 +1,6 @@
 import Match from "./Match"
 import './css/bracket.css'
+import { useLocation, withRouter } from "react-router";
 
 const Bracket = ({ tournament, updateMatch }) => {
     return (
@@ -22,4 +23,4 @@ const Bracket = ({ tournament, updateMatch }) => {
     )
 }
 
-export default Bracket
+export default Bracket;

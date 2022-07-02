@@ -5,7 +5,6 @@ import './css/table.css'
 
 const Table = ({teams}) => {
 
-    console.log(teams)
     const columns = useMemo(() => GROUP_COLUMNS, [])
     const data = useMemo(() => teams, [teams])
     

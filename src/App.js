@@ -5,6 +5,7 @@ import Table from './components/table/Table'
 import NewTournament from './components/form/NewTournament';
 import { useState } from 'react';
 import Bracket from './components/match/Bracket';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 
 
@@ -65,7 +66,6 @@ function App() {
         if(draw){
           if(winner == team.id){
             team.points += 1;
-            console.log(team.goals_scored)
             team.goals_scored = parseInt(team.goals_scored) + parseInt(winnerGoalsScored)
             team.goals_against = parseInt(team.goals_against) + parseInt(winnerGoalsAgainst)
           }
@@ -77,7 +77,6 @@ function App() {
         }else{
         if(winner == team.id){
           team.points += 3;
-          console.log(team.goals_scored)
           team.goals_scored = parseInt(team.goals_scored) + parseInt(winnerGoalsScored)
           team.goals_against = parseInt(team.goals_against) + parseInt(winnerGoalsAgainst)
         }
@@ -100,6 +99,15 @@ function App() {
       {<Table  teams={teams}/>}
       <Footer/>
     </div>
+    // <Router>
+    //   <Header/>
+    //   <Routes>
+    //     <Route path="/" element={<NewTournament updateState ={(value) => setSettings(value)} updateTeams = {(value => setTeams(value))} updateTournament ={(value => setTournament(value))}/>}></Route>
+    //     <Route path="/bracket" render={(props) => (<Bracket tournament={tournament} updateMatch = {(value => updateMatch(value))} {...props} />)}></Route>
+    //     <Route path="/table" element={<Table  teams={teams}/>}></Route>
+    //   </Routes>
+    //   <Footer/>
+    // </Router>
   );
 }
 
