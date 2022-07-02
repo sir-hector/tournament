@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tournament/static/css/main.f02beb4a.css",
+    "main.js": "/tournament/static/js/main.cc6eeab0.js",
+    "static/media/Roboto-Thin.ttf": "/tournament/static/media/Roboto-Thin.c38fab23fc1c36894f10.ttf",
+    "static/media/Roboto-Regular.ttf": "/tournament/static/media/Roboto-Regular.03523cf578d69fa92322.ttf",
+    "index.html": "/tournament/index.html",
+    "main.f02beb4a.css.map": "/tournament/static/css/main.f02beb4a.css.map",
+    "main.cc6eeab0.js.map": "/tournament/static/js/main.cc6eeab0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f02beb4a.css",
+    "static/js/main.cc6eeab0.js"
+  ]
+}
