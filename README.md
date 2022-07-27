@@ -15,3 +15,7 @@ This is my first application build in React from scratch.
 
 react hook form
 react table
+
+
+## demo 
+https://sir-hector.github.io/tournament/
