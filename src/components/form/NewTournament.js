@@ -65,8 +65,6 @@ const NewTournament = ({ updateState, updateTeams, updateTournament }) => {
         updateTournament(roundsArray)
     }
 
-    console.log(errors[`team1`])
-
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="tournament-form">
             <label> Amout of teams:

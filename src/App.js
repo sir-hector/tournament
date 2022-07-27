@@ -96,7 +96,7 @@ function App() {
       <Header/>
       <NewTournament updateState ={(value) => setSettings(value)} updateTeams = {(value => setTeams(value))} updateTournament ={(value => setTournament(value))}/>
       {setting.type && <Bracket tournament={tournament} updateMatch = {(value => updateMatch(value))} />}
-      {<Table  teams={teams}/>}
+      {teams.length > 0 && <Table  teams={teams}/>}
       <Footer/>
     </div>
     // <Router>
