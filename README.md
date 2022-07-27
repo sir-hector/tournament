@@ -1,9 +1,17 @@
 # GENERATING TOURNAMENT BRACKET 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project for generating simple tournament bracket - at this moment only Round Robin system.
+Select number of teams, name them and system will generate bracket.
 
-## Available Scripts
+You can set score of each match and system will present current table.
 
-In the project directory, you can run:
+This is my first application build in React from scratch.
 
-### `npm start`
+## Scripts
+
+### `npm start` - start app
+
+## Used liblaries
+
+react hook form
+react table
